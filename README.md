@@ -34,7 +34,8 @@ flowchart LR
 
 ## Methods 
 
-The "input" method files are in the form of CSV data with the following fields. Basically, the file lists all elementary flows and the characterization factors per impact category and/or indicator in columns. Preferably, method developers would provide methods in this format to ecoinvent (including any other fields). Indicator units need to be reported in a separate file.
+### Input 
+The "input" method files are in the form of CSV data with the following fields. Basically, the file lists all elementary flows and the characterization factors per impact category and/or indicator in columns. Preferably, method developers would provide methods in this format (including any other fields). Indicator units need to be reported in a separate file.
 
 |Field	                  |Field type                    |Data type	  |Note                                 |
 |-------------------------|------------------------------|-------------|-------------------------------------|
@@ -51,3 +52,28 @@ The "input" method files are in the form of CSV data with the following fields. 
 |...                      |                              |             |                                     |
 |{category and/or indicator n}|                          |             |                                     |
 |(any other field)        |optional                      |             |any other information that is available and helps to understand the method and its elementary flows|
+
+### Mapped 
+The "mapped" method files are in the form of CSV data with the following fields. They show what method elementary flows were mapped to elementary flows and can be used for reviewing method implementation.
+|Field	                  |Data type	  |Note   |
+|-------------------------|-------------|-------|
+|elementary_flow_id   		|string       | elementary flow UUID       |
+|elementary_flow_name			|string       | elementary flow name       |	
+|number		            |string       | elementary flow number       |		
+|formula			            |string       | elementary flow formula       |	
+|synonyms			            |string       |synonyms for  elementary flow       |	
+|compartment				      |string       | elementary flow compartment       |
+|subcompartment				    |string       | elementary flow subcompartment        |
+|unit_name		            |string       | elementary flow unit name      |		
+|flow_status		          |string       |indicates whether the  elementary flow was mapped|
+|flow_used				        |boolean      |indicates whether the  elementary flow is used in the  database   |
+|conversion_factor        |number       |the conversion with which the original characterization factor was multiplied       |
+|method_elementary_flow_id|string       |method elementary flow UUID       |
+|method_elementary_flow_name|string     |method elementary flow name       |
+|method_compartment       |string       |method elementary flow compartment       |
+|method_subcompartment    |string       |method elementary flow subcompartment       |
+|method_unit              |string       |method elementary flow unit       |
+|compartment_status       |string       |indicates whether the compartment/subcompartment was mapped or not       |
+|{category 1}\|{indicator 1}|number     |characterization factors of method impact category and indicator |
+|...                      |             |        | 
+|{category n}\|{indicator n}|           |        | 
