@@ -1,5 +1,6 @@
 # ecological-footprint
 Ecological footprint accounting in The Open Network
+
 Ecological footprint accounting in the transactions assessment of The Open Network
 
 ```mermaid
